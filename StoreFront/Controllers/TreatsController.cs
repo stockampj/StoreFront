@@ -1,4 +1,3 @@
-  
 using Microsoft.AspNetCore.Mvc;
 using StoreFront.Models;
 using StoreFront.Data;
@@ -15,16 +14,44 @@ using System.Security.Claims;
 
 namespace StoreFront.Controllers
 {
-  // [Authorize]
+  [Authorize]
   public class TreatsController: Controller
   {
     private readonly ApplicationDbContext _db;
-    // private readonly UserManager<ApplicationUser> _userManager;
+    private readonly UserManager<ApplicationUser> _userManager;
 
-    public TreatsController(ApplicationDbContext db)
+    public TreatsController(UserManager<ApplicationUser> userManager, ApplicationDbContext db)
     {
-      // _userManager = userManager;
+      _userManager = userManager;
       _db = db;
+    }
+
+    public ActionResult Index()
+    {
+      var treats = _db.Treats;
+      return View(treats);
+    }
+
+    [Authorize]
+    public async Task<ActionResult>  Create()
+    {
+      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      var currentUser = await _userManager.FindByIdAsync(userId);
+      ViewBag.FlavorId = new SelectList(_db.Flavors, "FlavorId", "Name");
+      return View();
+    }
+
+    [Authorize]
+    [HttpPost]
+    public ActionResult Create(Treat treat, int FlavorId)
+    {
+      _db.Treats.Add(treat);
+      if (FlavorId != 0)
+      {
+        _db.TreatFlavors.Add(new TreatFlavor() {TreatId = treat.TreatId, FlavorId = FlavorId});
+      }
+      _db.SaveChanges();
+      return RedirectToAction("Index");
     }
   }
 }

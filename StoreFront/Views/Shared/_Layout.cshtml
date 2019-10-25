@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using System.Security.Claims
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -34,6 +36,16 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                        @Html.ActionLink("Treats", "Index", "Treats", null, new {@class="nav-link text-dark"})
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="/Account">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            @using (Html.BeginForm("LogOff", "Account"))
+                            {
+                                <input type="submit" class="btn btn-default" value="Log out" />
+                            }
                         </li>
                     </ul>
                 </div>
