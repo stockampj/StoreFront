@@ -14,8 +14,8 @@ using System.Security.Claims;
 
 namespace StoreFront.Controllers
 {
-  
-  public class TreatsController: Controller
+
+  public class TreatsController : Controller
   {
     private readonly ApplicationDbContext _db;
     private readonly UserManager<ApplicationUser> _userManager;
@@ -33,10 +33,8 @@ namespace StoreFront.Controllers
     }
 
     [Authorize]
-    public async Task<ActionResult>  Create()
+    public async Task<ActionResult> Create()
     {
-      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-      var currentUser = await _userManager.FindByIdAsync(userId);
       ViewBag.FlavorId = new SelectList(_db.Flavors, "FlavorId", "Name");
       return View();
     }
@@ -48,10 +46,67 @@ namespace StoreFront.Controllers
       _db.Treats.Add(treat);
       if (FlavorId != 0)
       {
-        _db.TreatFlavors.Add(new TreatFlavor() {TreatId = treat.TreatId, FlavorId = FlavorId});
+        _db.TreatFlavors.Add(new TreatFlavor() { TreatId = treat.TreatId, FlavorId = FlavorId });
       }
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+
+    public ActionResult Show(int id)
+    {
+      var thisTreat = _db.Treats
+        .Include(treat => treat.Flavors)
+        .ThenInclude(join => join.Flavor)
+        .FirstOrDefault(treat => treat.TreatId == id);
+      return View(thisTreat);
+    }
+
+
+
+
+
+
+
+    [Authorize]
+    public ActionResult Delete(int id)
+    {
+      var thisTreat = _db.Treats.FirstOrDefault(treat => treat.TreatId == id);
+      Console.WriteLine(id);
+      _db.Treats.Remove(thisTreat);
+      _db.SaveChanges();
+
+      return RedirectToAction("Index");
+    }
+
+    [Authorize]
+    public ActionResult AddFlavor(int id)
+    {
+      var thisTreat = _db.Treats.FirstOrDefault(treat => treat.TreatId == id);
+      ViewBag.FlavorId = new SelectList(_db.Flavors, "FlavorId", "Name");
+      return View(thisTreat);
+    }
+
+    [HttpPost]
+    public ActionResult AddFlavor(Treat treat, int FlavorId)
+    {
+      if (FlavorId != 0)
+      {
+        _db.TreatFlavors.Add(new TreatFlavor() { FlavorId = FlavorId, TreatId = treat.TreatId });
+      }
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+
+
+
+
+
+
+
+
+
+
+
+
   }
 }

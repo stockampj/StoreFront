@@ -31,5 +31,6 @@ C:\users\stock\desktop\Project.Solution\StoreFront\obj\Debug\netcoreapp2.2\Store
 C:\users\stock\desktop\Project.Solution\StoreFront\obj\Debug\netcoreapp2.2\StoreFront.csproj.CopyComplete
 C:\users\stock\desktop\Project.Solution\StoreFront\obj\Debug\netcoreapp2.2\Razor\Views\Treats\AddFlavor.g.cshtml.cs
 C:\users\stock\desktop\Project.Solution\StoreFront\obj\Debug\netcoreapp2.2\Razor\Views\Treats\Create.g.cshtml.cs
-C:\users\stock\desktop\Project.Solution\StoreFront\obj\Debug\netcoreapp2.2\Razor\Views\Treats\Delete.g.cshtml.cs
 C:\users\stock\desktop\Project.Solution\StoreFront\obj\Debug\netcoreapp2.2\Razor\Views\Treats\Index.g.cshtml.cs
+C:\users\stock\desktop\Project.Solution\StoreFront\obj\Debug\netcoreapp2.2\Razor\Views\Treats\Show.g.cshtml.cs
+C:\users\stock\desktop\Project.Solution\StoreFront\obj\Debug\netcoreapp2.2\Razor\Views\Treats\Edit.g.cshtml.cs

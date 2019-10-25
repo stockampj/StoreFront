@@ -1,0 +1,28 @@
+@model StoreFront.Models.Treat
+
+<h4>Edit Treat</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.TreatId)
+
+    @Html.LabelFor(model => model.Name)
+    @Html.EditorFor(model => model.Name)
+
+    @Html.LabelFor(model => model.Description)
+    @Html.EditorFor(model => model.Description)
+
+    @Html.LabelFor(model => model.Rating)
+    <select id="Rating" name="Rating">
+        <option value="1" class="star1">1</option>
+        <option value="2" class="star2">2</option>
+        <option value="3" class="star3">3</option>
+        <option value="4" class="star4">4</option>
+        <option value="5" class="star5">5</option>
+    </select>
+
+    @Html.Label("Select Flavor")
+    @Html.DropDownList("FlavorId")
+
+    <input type="submit" value="Add new item" class="btn btn-default" />
+}
