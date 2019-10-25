@@ -7,7 +7,7 @@ using StoreFront.Models;
 
 namespace StoreFront.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public virtual DbSet<Flavor> Flavors {get; set;}
         public virtual DbSet<Treat> Treats {get; set;}

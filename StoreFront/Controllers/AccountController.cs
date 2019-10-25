@@ -1,10 +1,9 @@
-  
-using Microsoft.AspNetCore.Mvc;
+  using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
+using StoreFront.Data;
 using StoreFront.Models;
 using System.Threading.Tasks;
 using StoreFront.ViewModels;
-using StoreFront.Data;
 
 namespace StoreFront.Controllers
 {
