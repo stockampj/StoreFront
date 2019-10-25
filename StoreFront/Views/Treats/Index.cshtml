@@ -2,7 +2,7 @@
 @using System.Security.Claims
 @model IEnumerable<StoreFront.Models.Treat>
 
-<h4>PIerre's Treats</h4>
+<h4>Pierre's Scrumptious Offerings</h4>
 
 @if (Model.Any())
 {
@@ -17,7 +17,13 @@ else
 {
   <h3>No treats have been added yet!</h3>
 }
+@if (User.Identity.IsAuthenticated)
+{
+  <p>@Html.ActionLink("Add new treat", "Create")</p>
+}
 
-<p>@Html.ActionLink("Add new treat", "Create")</p>
+
 
 <p>@Html.ActionLink("Home", "Index", "Home")</p>
+
+

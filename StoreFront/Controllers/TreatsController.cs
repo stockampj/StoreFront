@@ -14,7 +14,7 @@ using System.Security.Claims;
 
 namespace StoreFront.Controllers
 {
-  [Authorize]
+  
   public class TreatsController: Controller
   {
     private readonly ApplicationDbContext _db;
