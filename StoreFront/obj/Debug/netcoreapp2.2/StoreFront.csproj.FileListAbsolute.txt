@@ -34,3 +34,7 @@ C:\users\stock\desktop\Project.Solution\StoreFront\obj\Debug\netcoreapp2.2\Razor
 C:\users\stock\desktop\Project.Solution\StoreFront\obj\Debug\netcoreapp2.2\Razor\Views\Treats\Index.g.cshtml.cs
 C:\users\stock\desktop\Project.Solution\StoreFront\obj\Debug\netcoreapp2.2\Razor\Views\Treats\Show.g.cshtml.cs
 C:\users\stock\desktop\Project.Solution\StoreFront\obj\Debug\netcoreapp2.2\Razor\Views\Treats\Edit.g.cshtml.cs
+C:\users\stock\desktop\Project.Solution\StoreFront\obj\Debug\netcoreapp2.2\Razor\Views\Flavors\Create.g.cshtml.cs
+C:\users\stock\desktop\Project.Solution\StoreFront\obj\Debug\netcoreapp2.2\Razor\Views\Flavors\Edit.g.cshtml.cs
+C:\users\stock\desktop\Project.Solution\StoreFront\obj\Debug\netcoreapp2.2\Razor\Views\Flavors\Index.g.cshtml.cs
+C:\users\stock\desktop\Project.Solution\StoreFront\obj\Debug\netcoreapp2.2\Razor\Views\Flavors\Show.g.cshtml.cs

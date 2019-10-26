@@ -2966,6 +2966,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "Views\\Flavors\\Show.cshtml",
+      "TargetPath": "Views\\Flavors\\Show.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Views\\Account\\Login.cshtml",
       "TargetPath": "Views\\Account\\Login.cshtml",
       "FileKind": "mvc"
@@ -2981,8 +2986,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "Views\\Flavors\\Edit.cshtml",
+      "TargetPath": "Views\\Flavors\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Views\\Flavors\\Index.cshtml",
+      "TargetPath": "Views\\Flavors\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -3023,6 +3038,11 @@
     {
       "FilePath": "Views\\Account\\Register.cshtml",
       "TargetPath": "Views\\Account\\Register.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Views\\Flavors\\Create.cshtml",
+      "TargetPath": "Views\\Flavors\\Create.cshtml",
       "FileKind": "mvc"
     }
   ],

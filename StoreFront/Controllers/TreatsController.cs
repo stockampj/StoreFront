@@ -61,12 +61,6 @@ namespace StoreFront.Controllers
       return View(thisTreat);
     }
 
-
-
-
-
-
-
     [Authorize]
     public ActionResult Delete(int id)
     {
@@ -96,17 +90,5 @@ namespace StoreFront.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
-
-
-
-
-
-
-
-
-
-
-
-
   }
 }

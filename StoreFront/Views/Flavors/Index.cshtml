@@ -1,0 +1,19 @@
+@using StoreFront.Models;
+@model List<StoreFront.Models.Flavor>;
+
+<h1>Flavors</h1>
+
+@if (@Model.Count == 0)
+{
+  <h3>No flavors have been added yet!</h3>
+} 
+
+@foreach (Flavor flavor in Model)
+{
+  <li>@Html.ActionLink($"{flavor.Name}", "Show", new { id = flavor.FlavorId })</li>
+}
+
+@if (User.Identity.IsAuthenticated)
+{
+  <p>@Html.ActionLink("Add new Flavor", "Create")</p>
+}
