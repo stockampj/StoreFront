@@ -14,6 +14,7 @@
     List<Treat> column1 = new List<Treat> {};
     List<Treat> column2 = new List<Treat> {};
     List<Treat> column3 = new List<Treat> {};
+    List<Treat> column4 = new List<Treat> {};
 
     @foreach (Treat treat in Model)
     {
@@ -28,11 +29,14 @@
             case 3:
                 column3.Add(treat);
                 break;
+            case 4:
+                column4.Add(treat);
+                break;
             default:
                 break;
         }
 
-        @if (columnAssignment >= 3)
+        @if (columnAssignment >= 4)
         {
             columnAssignment = 1;
         }
@@ -41,125 +45,51 @@
             columnAssignment++;
         } 
     }
-    <div class="info-holder row">
-        <div class="info-column">
-            @foreach (Treat treat in column1)
-            {
-                <div class="info-item" id="@treat.TreatId">
-                    <h4 class="info-header">
-                        @treat.Name
-                    </h4>
-                    <p class="info-rating">
-                        @switch(treat.Rating)
-                        {
-                            case 1:
-                                <i class="fas fa-star"></i><i class="fas fa-star fas-faded"></i><i class="fas fa-star fas-faded"></i><i class="fas fa-star fas-faded"></i><i class="fas fa-star fas-faded"></i>
-                                break;
-                            case 2:
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star fas-faded"></i><i class="fas fa-star fas-faded"></i><i class="fas fa-star fas-faded"></i>
-                                break;
-                            case 3:
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star fas-faded"></i><i class="fas fa-star fas-faded"></i>
-                                break;
-                            case 4:
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star fas-faded"></i>
-                                break;
-                            case 5:
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                break;
-                        }
-                    </p>
-                    <p class="info-description">
-                        @treat.Description
-                    </p>
-                    <ul class="info-tag-holder">
-                        @foreach(var join in treat.Flavors)
-                        {
-                            <li>@join.Flavor.Name</li>
-                        }
-                    </ul>
-                </div>
-            }
-        </div>
-        <div class="info-column">
-            @foreach (Treat treat in column2)
-            {
-                <div class="info-item" id="@treat.TreatId">
-                    <h4 class="info-header">
-                        @treat.Name
-                    </h4>
-                    <p class="info-rating">
-                        @switch(treat.Rating)
-                        {
-                            case 1:
-                                <i class="fas fa-star"></i><i class="fas fa-star fas-faded"></i><i class="fas fa-star fas-faded"></i><i class="fas fa-star fas-faded"></i><i class="fas fa-star fas-faded"></i>
-                                break;
-                            case 2:
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star fas-faded"></i><i class="fas fa-star fas-faded"></i><i class="fas fa-star fas-faded"></i>
-                                break;
-                            case 3:
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star fas-faded"></i><i class="fas fa-star fas-faded"></i>
-                                break;
-                            case 4:
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star fas-faded"></i>
-                                break;
-                            case 5:
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                break;
-                        }
-                    </p>
-                    <p class="info-description">
-                        @treat.Description
-                    </p>
-                    <ul class="info-tag-holder">
-                        @foreach(var join in treat.Flavors)
-                        {
-                            <li>@join.Flavor.Name</li>
-                        }
-                    </ul>
-                </div>
-            }
-        </div>
+    List<List<Treat>> columnHolder = new List<List<Treat>> {column1, column2, column3, column4};
 
-        <div class="info-column">
-            @foreach (Treat treat in column3)
-            {
-                <div class="info-item" id="@treat.TreatId">
-                    <h4 class="info-header">
-                        @treat.Name
-                    </h4>
-                    <p class="info-rating">
-                        @switch(treat.Rating)
-                        {
-                            case 1:
-                                <i class="fas fa-star"></i><i class="fas fa-star fas-faded"></i><i class="fas fa-star fas-faded"></i><i class="fas fa-star fas-faded"></i><i class="fas fa-star fas-faded"></i>
-                                break;
-                            case 2:
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star fas-faded"></i><i class="fas fa-star fas-faded"></i><i class="fas fa-star fas-faded"></i>
-                                break;
-                            case 3:
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star fas-faded"></i><i class="fas fa-star fas-faded"></i>
-                                break;
-                            case 4:
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star fas-faded"></i>
-                                break;
-                            case 5:
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                break;
-                        }
-                    </p>
-                    <p class="info-description">
-                        @treat.Description
-                    </p>
-                    <ul class="info-tag-holder">
-                        @foreach(var join in treat.Flavors)
-                        {
-                            <li>@join.Flavor.Name</li>
-                        }
-                    </ul>
-                </div>
-            }
-        </div>
+    <div class="info-holder row">
+        @foreach (List<Treat> column in columnHolder)
+        {
+            <div class="info-column">
+                @foreach (Treat treat in column)
+                {
+                    <div class="info-item" id="@treat.TreatId">
+                        <h4 class="info-header">
+                            @treat.Name
+                        </h4>
+                        <p class="info-rating">
+                        @{
+                            string ratingOutput = "";
+                            @for (int l=1; l<=5; l++)
+                            {
+                                string output = "";
+                                @if (l<=treat.Rating)
+                                {                                
+                                    output+= "<i class='fas fa-star'></i>";
+                                }
+                                else
+                                {
+                                    output+= "<i class='fas fa-star fas-faded'></i>";
+                                }
+                                ratingOutput+= output;
+                            }
+                            @Html.Raw(ratingOutput);
+                        }                            
+                        </p>
+                        <p class="info-description">
+                            @treat.Description
+                        </p>
+                        <ul class="info-tag-holder">
+                            @foreach(var join in treat.Flavors)
+                            {
+                                <li class="info-tag">@join.Flavor.Name</li>
+                            }
+                        </ul>
+                    </div>
+                }
+            </div>
+
+        }
     </div>
 }
 

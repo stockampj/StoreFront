@@ -72,8 +72,8 @@ body {
 }
 
 .info-column {
-  flex: 33%;
-  max-width: 33%;
+  flex: 25%;
+  max-width: 25%;
   padding: 0 4px;
 }
 
@@ -86,7 +86,7 @@ body {
   width: 100%;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1200px) {
   .info-column {
     flex: 50%;
     max-width: 50%;
@@ -109,6 +109,16 @@ body {
 
 }
 
-.info-tag {
+.info-tag-holder {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
 
+.info-tag {
+  flex: 50%;
+  max-width: 50%;
+  padding: 0 4px;
+  font-weight: 600;
 }
