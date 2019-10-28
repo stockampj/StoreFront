@@ -1,9 +1,18 @@
+@using System.Collections.Generic
+@using StoreFront.Models
 @model StoreFront.Models.Flavor
 
 <h4>Add a new Flavor</h4>
 @using (Html.BeginForm())
 {
     @Html.LabelFor(model => model.Name)
-    @Html.TextBoxFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name)<br>
+    @foreach (String color in ColorList.Colors)
+    {
+        <input type="radio" name="Color" id="Color" value="@color">
+        <div class="@color select-color"></div>
+        @color<br>
+    }
+
     <input type="submit" value="Add new flavor" />
 }

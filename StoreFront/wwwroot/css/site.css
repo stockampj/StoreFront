@@ -84,6 +84,8 @@ body {
   background-color: lightgray;
   padding: 10px;
   width: 100%;
+  border: outset rgba(175, 175, 175, 0.5);
+
 }
 
 @media (max-width: 1200px) {
@@ -98,15 +100,6 @@ body {
     flex: 100%;
     max-width: 100%;
   }
-}
-
-
-.info-rating {
-
-}
-
-.info-description {
-
 }
 
 .info-tag-holder {
@@ -128,5 +121,39 @@ body {
   text-align: center;
   border-radius: 2px;
   overflow: hidden;
+  border: inset rgba(175, 175, 175, 0.5);
 }
 
+.select-color{
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+}
+
+.red{
+  background-color: rgba(122, 81, 81, .8);
+}
+
+.orange{
+  background-color: rgba(131, 111, 71, .8);
+}
+
+.yellow{
+  background-color: rgba(117, 117, 76, .8);
+}
+
+.green{
+  background-color: rgba(56, 70, 56, .8);
+}
+
+.blue{
+  background-color: rgba(56, 56, 85, .8);
+}
+
+.purple{
+  background-color: rgba(86, 64, 95, .8);
+}
+
+.brown{
+  background-color: rgba(68, 58, 45, 0.8);
+}

@@ -11,6 +11,7 @@ namespace StoreFront.Models
     
     public int FlavorId {get; set;}
     public string Name {get; set;}
+    public string Color {get; set;}
     public virtual ICollection<TreatFlavor> Treats {get; set;}
   }
 }

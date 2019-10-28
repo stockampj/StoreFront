@@ -5,6 +5,12 @@
 {
     @Html.HiddenFor(model => model.FlavorId)
     @Html.LabelFor(model => model.Name)
-    @Html.EditorFor(model => model.Name)
+    @Html.EditorFor(model => model.Name)<br>
+    @foreach (String color in ColorList.Colors)
+    {
+        <input type="radio" name="Color" id="Color" value="@color">
+        @color
+        <div class="@color select-color"></div>
+    }
     <input type="submit" value="Add new flavor" />
 }
