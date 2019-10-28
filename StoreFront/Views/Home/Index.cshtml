@@ -62,16 +62,16 @@
                             string ratingOutput = "";
                             @for (int l=1; l<=5; l++)
                             {
-                                string output = "";
+                                string star = "";
                                 @if (l<=treat.Rating)
                                 {                                
-                                    output+= "<i class='fas fa-star'></i>";
+                                    star+= "<i class='fas fa-star'></i>";
                                 }
                                 else
                                 {
-                                    output+= "<i class='fas fa-star fas-faded'></i>";
+                                    star+= "<i class='fas fa-star fas-faded'></i>";
                                 }
-                                ratingOutput+= output;
+                                ratingOutput+= star;
                             }
                             @Html.Raw(ratingOutput);
                         }                            

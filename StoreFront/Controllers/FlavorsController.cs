@@ -47,6 +47,22 @@ namespace StoreFront.Controllers
     }
 
     [Authorize]
+    public ActionResult Edit (int id)
+    {
+        var thisFlavor = _db.Flavors.FirstOrDefault(flavor => flavor.FlavorId == id);
+        return View(thisFlavor);
+    }
+
+    [Authorize]
+    [HttpPost]
+    public ActionResult Edit (Flavor flavor)
+    {
+        _db.Entry(flavor).State = EntityState.Modified;
+        _db.SaveChanges();      
+        return RedirectToAction("Index");
+    }
+
+    [Authorize]
     public ActionResult Show(int id)
     {
         var thisFlavor = _db.Flavors

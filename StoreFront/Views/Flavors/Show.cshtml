@@ -6,19 +6,19 @@
 
 @if(@Model.Treats.Count == 0)
 {
-  <p>This tag does not have any treats</p>
+  <p>This Flavor does not have any treats</p>
 }
 else
 {
-  <h4>The tag contains:</h4>
+  <h4>Associated Treats</h4>
   <ul>
   @foreach(var join in Model.Treats)
   {
-    <li>@join.Treat.Description</li>
+    <li>@join.Treat.Name</li>
   }
   </ul>
 }
 
 <p>@Html.ActionLink("Back to flavors", "Index")</p>
-<p>@Html.ActionLink("Edit Flavor", "Edit", new { id = Model.FlavorId })</p>
+<p>@Html.ActionLink("Edit Flavor", "Edit", "Flavors", new { id = Model.FlavorId })</p>
 <p>@Html.ActionLink("Delete Flavor", "Delete", new { id = Model.FlavorId })</p>
